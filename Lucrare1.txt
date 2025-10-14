@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+ <head>
+    <meta charset="UTF-8">
+    <title>Rețetele Mele Preferate</title>
+ </head>
+    <body>
+    <p> <h2>Buna va invit la retele mele si abonati va!</h2>
+    </p>
+
+</body>
+</html>
+    
+     
