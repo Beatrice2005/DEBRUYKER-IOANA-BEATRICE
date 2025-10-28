@@ -1,0 +1,200 @@
+<html>
+<head>
+    <title>Inregistrare Animale</title>
+    
+    <style type="text/css">
+        
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #bd8596; 
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+        }
+
+        h1 {
+            color: #960783;
+        }
+
+        p {
+            color: #0e0d0d;
+            text-align: center;
+            max-width: 500px;
+        }
+
+        form {
+            max-width: 500px;
+            width: 100%;
+            margin: 20px auto; 
+            background-color: #ffffff; 
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); 
+            border-radius: 8px; 
+            padding: 25px;
+            box-sizing: border-box; 
+        }
+
+        form > div {
+            margin-bottom: 15px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        input[type="text"],
+        select,
+        textarea {
+            width: 100%;
+            padding: 10px; 
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box; 
+        }
+
+        input[type="text"]:focus,
+        select:focus,
+        textarea:focus {
+            border-color: #e21092; 
+            outline: none; 
+            box-shadow: 0 0 5px rgba(217, 91, 0, 0.3);
+        }
+
+        fieldset {
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            margin-bottom: 15px;
+            padding: 10px 15px;
+        }
+
+        legend {
+            font-weight: bold;
+            color: #f51ca2; 
+            padding: 0 5px;
+        }
+
+        fieldset div {
+            display: flex;
+            align-items: center;
+            margin-bottom: 8px;
+        }
+
+        fieldset label {
+            font-weight: normal;
+            margin-bottom: 0;
+            margin-left: 8px;
+        }
+
+        .butoane-container {
+            display: flex;
+            justify-content: space-between; 
+            margin-top: 20px;
+        }
+
+        button {
+            padding: 12px 25px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: bold;
+            color: white;
+        }
+
+        .btn-trimite {
+            background-color: #ee18ae;
+        }
+
+        .btn-reseteaza {
+            background-color: #92054c;
+        }
+
+        .btn-trimite:hover {
+            background-color: #e67000; 
+        }
+
+        .btn-reseteaza:hover {
+            background-color: #757575;
+        }
+
+    </style>
+</head>
+<body>
+
+    <h1>❤️Formular de inregistrare animalute❤️</h1>
+
+    <p>Completeaza formularul de mai jos pentru a inregistra aanimalutul tau la clinica veterinara</p>
+
+    <form action="#" method="post">
+        
+        <div>
+            <label for="stapan">Nume proprietar:</label>
+            <input type="text" id="stapan" name="stapan">
+        </div>
+
+        <div>
+            <label for="telefon">Numar de telefon:</label>
+            <input type="text" id="telefon" name="telefon">
+        </div>
+
+        <div>
+            <label for="animal">Nume animalut:</label>
+            <input type="text" id="animal" name="animal">
+        </div>
+
+        <div>
+            <label for="specie">Specie:</label>
+            <select id="specie" name="specie">
+                <option value="caine">Caine</option>
+                <option value="pisica">Pisica</option>
+                <option value="iepure">Iepure</option>
+                <option value="hamster">Hamster</option>
+                <option value="porcusor de guinea">Porcusor de guinea</option>
+                <option value="alt animalut">Altul</option>   
+            </select>
+        </div>
+
+        <fieldset>
+            <legend>Sexul animalului:</legend>
+            <div>
+                <input type="radio" id="mascul" name="sex" value="mascul">
+                <label for="mascul">Mascul</label>
+            </div> 
+            <div>
+                <input type="radio" id="femela" name="sex" value="femela">
+                <label for="femela">Femela</label>
+            </div>
+        </fieldset>
+
+        <fieldset>
+            <legend>Servicii dorite:</legend>
+            <div>
+                <input type="checkbox" id="vaccinare" name="servicii" value="vaccinare">
+                <label for="vaccinare">Vaccinare</label>
+            </div>
+            <div>
+                <input type="checkbox" id="deparazitare" name="servicii" value="deparazitare">
+                <label for="deparazitare">Deparazitare</label>
+            </div>
+            <div>
+                <input type="checkbox" id="consult" name="servicii" value="consult">
+                <label for="consult">Consult</label>
+            </div>
+        </fieldset>
+
+        <div>
+            <label for="observatii">Observatii:</label>
+            <textarea id="observatii" name="observatii" rows="4"></textarea>
+        </div>
+
+        <div class="butoane-container">
+            <button type="submit" class="btn-trimite">Trimite</button>
+            <button type="reset" class="btn-reseteaza">Reseteaza</button>
+        </div>
+
+    </form>
+ <p><h2>Multumim!❤️ </h2></p>
+</body>
+</html>
