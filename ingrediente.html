@@ -1,24 +1,129 @@
 <!DOCTYPE html>
-<html>
+<html lang="ro">
 <head>
     <meta charset="UTF-8">
     <title>Ingrediente - Cafeneaua Miau</title>
+    <style>
+        body {
+            font-family: Calibri, sans-serif;
+            background-color: #fff8f8;
+            margin: 0;
+            padding: 0 20px 50px 20px;
+        }
+
+        h1 {
+            background-color: pink;
+            padding: 20px;
+            text-align: center;
+            color: #5D4037;
+            margin-bottom: 30px;
+        }
+
+        .ingredient-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .ingredient-item {
+            display: flex;
+            align-items: center;
+            background-color: rgb(255, 206, 214);
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            padding: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+            overflow: hidden;
+        }
+
+        .item-image {
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-right: 20px;
+        }
+
+        .item-details {
+            flex: 1;
+        }
+
+        .item-details h3 {
+            margin: 0 0 10px 0;
+            font-size: 1.5rem;
+            color: #070606;
+        }
+
+        .item-details p {
+            margin: 0;
+            font-size: 1.1rem;
+            color: #555;
+            line-height: 1.5;
+        }
+
+        .back-link {
+            display: block;
+            text-align: center;
+            margin-top: 40px;
+            font-size: 1.1rem;
+            color: #E57373;
+            text-decoration: none;
+        }
+        .back-link:hover {
+            text-decoration: underline;
+        }
+    </style>
 </head>
 
-<body style="font-family: Calibri; background-color: #fff8f8;">
-    <h1 style="background-color: pink; padding: 10px;">Ingrediente folosite</h1>
+<body>
+    <h1>Ingredientele noastre</h1>
+
+    <div class="ingredient-container">
+
+        <div class="ingredient-item">
+            <img src="boabe-cafea.jpg" alt="Boabe de cafea" class="item-image">
+            <div class="item-details">
+                <h3>Boabe de cafea Arabica</h3>
+                <p>Folosim doar boabe 100% Arabica, cu prajire medie, pentru un gust echilibrat.</p>
+            </div>
+        </div>
+
+        <div class="ingredient-item">
+            <img src="ciocolata.jpg" alt="Ciocolata" class="item-image">
+            <div class="item-details">
+                <h3>Ciocolata Belgiana</h3>
+                <p>Ciocolata noastra calda este facuta cu ciocolata belgiana autentica, nu cu pudra.</p>
+            </div>
+        </div>
+
+        <div class="ingredient-item">
+            <img src="fructe.jpg" alt="Fructe proaspete" class="item-image">
+            <div class="item-details">
+                <h3>Fructe Proaspete</h3>
+                <p>Limonadele si fresh-urile sunt facute pe loc din fructe proaspete (zmeura, mango, cirese).</p>
+            </div>
+        </div>
+
+        <div class="ingredient-item">
+            <img src="lapte.jpg" alt="Lapte" class="item-image">
+            <div class="item-details">
+                <h3>Lapte Bio</h3>
+                <p>Pentru specialitatile calde (Latte, Cappuccino) folosim lapte bio proaspat.</p>
+            </div>
+        </div>
+
+        <div class="ingredient-item">
+            <img src="menta.jpg" alt="Menta" class="item-image">
+            <div class="item-details">
+                <h3>Menta locala</h3>
+                <p>Frunzele de menta pentru limonade sunt crescute local si aduc un plus de prospetime.</p>
+            </div>
+        </div>
+
+    </div> 
 
     <p>
-        Folosim doar ingrediente naturale, atent alese:<br>
-        - Boabe de cafea Arabica 100% prăjite mediu<br>
-        - Ciocolată belgiană autentică<br>
-        - Fructe proaspete pentru limonade (zmeură, mango, cireșe)<br>
-        - Lapte bio pentru specialitățile calde<br>
-        - Frunze de mentă crescute local
-    </p>
-
-    <p>
-        <a href="Home.html">⬅ Înapoi la pagina principală</a>
+        <a href="Home.html" class="back-link">⬅ Inapoi la pagina principala</a>
     </p>
 </body>
 </html>

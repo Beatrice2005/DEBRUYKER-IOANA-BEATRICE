@@ -1,35 +1,362 @@
 <!DOCTYPE html>
-<html>
+<html lang="ro">
 <head>
     <meta charset="UTF-8">
     <title>Meniu - Cafeneaua Miau</title>
+    
+    <style>
+        body {
+            font-family: Calibri, sans-serif;
+            background-color: #fff8f8;
+            margin: 0;
+            padding: 0 20px 50px 20px;
+        }
+
+        h1 {
+            background-color: pink;
+            padding: 20px;
+            text-align: center;
+            color: #5D4037;
+            margin-bottom: 30px;
+        }
+
+        .menu-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .menu-item {
+            display: flex;
+            align-items: center;
+            background-color: #ffffff;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            padding: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+            overflow: hidden;
+        }
+
+        .item-image {
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-right: 20px;
+        }
+
+        .item-details {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .item-details h3 {
+            margin: 0 0 10px 0;
+            font-size: 1.5rem;
+            color: #333;
+        }
+
+        .item-price {
+            font-size: 1.3rem;
+            font-weight: bold;
+            color: #E57373;
+            margin-bottom: 15px;
+        }
+
+        .prep-button {
+            background-color: #ffc0cb;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+            color: #5D4037;
+            width: 180px;
+            text-align: center;
+            transition: background-color 0.3s;
+        }
+
+        .prep-button:hover {
+            background-color: #f7a0b0;
+        }
+
+        .modal-overlay {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.6);
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal-content {
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            width: 90%;
+            max-width: 500px;
+            position: relative;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .close-button {
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            font-size: 2rem;
+            color: #aaa;
+            cursor: pointer;
+            line-height: 1;
+        }
+
+        .close-button:hover {
+            color: #333;
+        }
+        
+        .back-link {
+            display: block;
+            text-align: center;
+            margin-top: 40px;
+            font-size: 1.1rem;
+            color: #E57373;
+            text-decoration: none;
+        }
+        .back-link:hover {
+            text-decoration: underline;
+        }
+        
+    </style>
 </head>
 
-<body style="font-family: Calibri; background-color: #fff8f8;">
-    <h1 style="background-color: pink; padding: 10px;">Meniul nostru</h1>
+<body>
+    <h1>Meniul nostru</h1>
 
-    <p><b>Ciocolata calda (Cioco-Moco)</b><br>
-        <img src="Ciocolata calda.jpg" alt="Ciocolata calda" width="150"><br>
-        <a href='https://www.coffeepoint.ro/blog/ciocolata-calda-retete.html'>Modul de preparare</a>
-    </p>
+    <div class="menu-container">
 
-    <p><b>Limonada cu zmeura si menta</b><br>
-        <img src="Limonada cu zmeura.jpg" alt="Limonada cu zmeura si menta" width="150"><br>
-        <a href='https://www.bucataras.ro/retete/limonada-cu-zmeura-si-menta-35389.html'>Modul de preparare</a>
-    </p>
+        <div class="menu-item">
+            <img src="Ciocolata calda.jpg" alt="Ciocolata calda" class="item-image">
+            <div class="item-details">
+                <h3>Ciocolata calda (Cioco-Moco)</h3>
+                <span class="item-price">15 Lei</span>
+                <button class="prep-button" data-modal-target="#modal-cioco">Mod de preparare</button>
+            </div>
+        </div>
 
-    <p><b>Limonada cu mango</b><br>
-        <img src="Limonada cu mango.jpg" alt="Limonada cu mango" width="150"><br>
-        <a href='https://www.bucataras.ro/retete/limonada-de-mango-95874.html'>Modul de preparare</a>
-    </p>
+        <div class="menu-item">
+            <img src="Limonada cu zmeura.jpg" alt="Limonada cu zmeura si menta" class="item-image">
+            <div class="item-details">
+                <h3>Limonada cu zmeura si menta</h3>
+                <span class="item-price">14 Lei</span>
+                <button class="prep-button" data-modal-target="#modal-zmeura">Mod de preparare</button>
+            </div>
+        </div>
 
-    <p><b>Cafe latte</b><br>
-        <img src="Cafe latte.jpg" alt="Cafe latte" width="150"><br>
-        <a href='https://www.perfectespresso.ro/ro/blog/articole/cum-se-prepara-caffe-latte--42'>Modul de preparare</a>
-    </p>
+        <div class="menu-item">
+            <img src="Limonada cu mango.jpg" alt="Limonada cu mango" class="item-image">
+            <div class="item-details">
+                <h3>Limonada cu mango</h3>
+                <span class="item-price">16 Lei</span>
+                <button class="prep-button" data-modal-target="#modal-mango">Mod de preparare</button>
+            </div>
+        </div>
+
+        <div class="menu-item">
+            <img src="Cafe latte.jpg" alt="Cafe latte" class="item-image">
+            <div class="item-details">
+                <h3>Cafe latte</h3>
+                <span class="item-price">12 Lei</span>
+                <button class="prep-button" data-modal-target="#modal-latte">Mod de preparare</button>
+            </div>
+        </div>
+
+        <div class="menu-item">
+            <img src="Espresso.jpg" alt="Espresso" class="item-image">
+            <div class="item-details">
+                <h3>Espresso</h3>
+                <span class="item-price">9 Lei</span>
+                <button class="prep-button" data-modal-target="#modal-espresso">Mod de preparare</button>
+            </div>
+        </div>
+
+        <div class="menu-item">
+            <img src="Cappuccino.jpg" alt="Cappuccino" class="item-image">
+            <div class="item-details">
+                <h3>Cappuccino</h3>
+                <span class="item-price">13 Lei</span>
+                <button class="prep-button" data-modal-target="#modal-cappuccino">Mod de preparare</button>
+            </div>
+        </div>
+
+        <div class="menu-item">
+            <img src="Matcha Latte.jpg" alt="Matcha Latte" class="item-image">
+            <div class="item-details">
+                <h3>Matcha Latte</h3>
+                <span class="item-price">17 Lei</span>
+                <button class="prep-button" data-modal-target="#modal-matcha">Mod de preparare</button>
+            </div>
+        </div>
+
+        <div class="menu-item">
+            <img src="Frappe.jpg" alt="Frappe" class="item-image">
+            <div class="item-details">
+                <h3>Frappe</h3>
+                <span class="item-price">18 Lei</span>
+                <button class="prep-button" data-modal-target="#modal-frappe">Mod de preparare</button>
+            </div>
+        </div>
+
+        <div class="menu-item">
+            <img src="Fresh Portocale.jpg" alt="Fresh de Portocale" class="item-image">
+            <div class="item-details">
+                <h3>Fresh de Portocale</h3>
+                <span class="item-price">15 Lei</span>
+                <button class="prep-button" data-modal-target="#modal-fresh">Mod de preparare</button>
+            </div>
+        </div>
+
+        <div class="menu-item">
+            <img src="Ceai Fructe.jpg" alt="Ceai de fructe de padure" class="item-image">
+            <div class="item-details">
+                <h3>Ceai de Fructe</h3>
+                <span class="item-price">12 Lei</span>
+                <button class="prep-button" data-modal-target="#modal-ceai">Mod de preparare</button>
+            </div>
+        </div>
+
+    </div> 
+
 
     <p>
-        <a href="Home.html">⬅ Înapoi la pagina principală</a>
+        <a href="Home.html" class="back-link">⬅ Inapoi la pagina principala</a>
     </p>
+
+
+    <div id="modal-cioco" class="modal-overlay">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <h4>Mod de preparare: Ciocolata calda</h4>
+            <p>Se incalzeste laptele la foc mic, fara a-l fierbe. Se adauga ciocolata rasa sau pudra de cacao si zaharul, amestecand continuu cu un tel pana la omogenizarea completa. Pentru un plus de savoare, se adauga un praf de scortisoara.</p>
+        </div>
+    </div>
+
+    <div id="modal-zmeura" class="modal-overlay">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <h4>Mod de preparare: Limonada cu zmeura si menta</h4>
+            <p>Zmeura proaspata si frunzele de menta se piseaza usor intr-un pahar pentru a elibera aromele. Se adauga sucul de lamaie proaspat stors, miere dupa gust si se completeaza cu apa plata. Se amesteca bine si se serveste cu gheata.</p>
+        </div>
+    </div>
+
+    <div id="modal-mango" class="modal-overlay">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <h4>Mod de preparare: Limonada cu mango</h4>
+            <p>Piureul de mango din fruct proaspat, se amesteca energic cu suc de lamaie si un indulcitor. Compozitia se toarna intr-un pahar plin cu gheata si se completeaza cu apa rece. Se decoreaza cu o felie de lamaie sau o bucatica de mango.</p>
+        </div>
+    </div>
+
+    <div id="modal-latte" class="modal-overlay">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <h4>Mod de preparare: Cafe latte</h4>
+            <p>Se prepara un espresso scurt (30ml) direct in paharul de servire. Separat, se spumeaza laptele cald folosind duza de abur a espressorului, pana se obtine o spuma fina si cremoasa. Se toarna laptele spumat peste espresso si se serveste imediat.</p>
+        </div>
+    </div>
+
+    <div id="modal-espresso" class="modal-overlay">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <h4>Mod de preparare: Espresso</h4>
+            <p>Se foloseste o portie de 7 grame de cafea macinata fin, prin care se forteaza apa fierbinte la presiune inalta timp de 25-30 de secunde. Rezultatul este o bautura concentrata de 30ml, cu un strat de crema deasupra.</p>
+        </div>
+    </div>
+
+    <div id="modal-cappuccino" class="modal-overlay">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <h4>Mod de preparare: Cappuccino</h4>
+            <p>Bautura clasica italiana este formata din trei parti egale: o parte espresso, o parte lapte cald si o parte spuma de lapte. Espresso-ul se toarna primul in ceasca, urmat de laptele si spuma.</p>
+        </div>
+    </div>
+
+    <div id="modal-matcha" class="modal-overlay">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <h4>Mod de preparare: Matcha Latte</h4>
+            <p>O lingurita de pudra matcha se amesteca cu o cantitate mica de apa fierbinte, pana se dizolva si face spuma. Separat, se incalzeste si se spumeaza laptele, care se toarna apoi peste matcha.</p>
+        </div>
+    </div>
+
+    <div id="modal-frappe" class="modal-overlay">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <h4>Mod de preparare: Frappe</h4>
+            <p>Se amesteca intr-un shaker sau cu un mixer de mana cafea instant (ness), o lingura de zahar si foarte putina apa rece, pana se obtine o spuma densa. Spuma se toarna intr-un pahar inalt peste cuburi de gheata, apoi se completeaza cu lapte si apa rece.</p>
+        </div>
+    </div>
+
+    <div id="modal-fresh" class="modal-overlay">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <h4>Mod de preparare: Fresh de Portocale</h4>
+            <p>Se taie 3 portocale proaspete si se storc folosind un storcator manual. Sucul obtinut se toarna direct in pahar, fara a adauga zahar sau apa. Se serveste imediat pentru a beneficia de vitamina C.</p>
+        </div>
+    </div>
+
+    <div id="modal-ceai" class="modal-overlay">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <h4>Mod de preparare: Ceai de Fructe</h4>
+            <p>O lingurita de fructe de padure uscate se pun intr-un infuzor. Peste acestea se toarna apa fierbinte si se lasa la infuzat timp de 5-10 minute, in functie de intensitatea dorita. Se poate indulci cu miere, trebuie doar sa cereti plicuri de miere la masa</p>
+        </div>
+    </div>
+
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            
+            const openButtons = document.querySelectorAll('.prep-button');
+            const closeButtons = document.querySelectorAll('.close-button');
+            const overlays = document.querySelectorAll('.modal-overlay');
+
+            function openModal(modal) {
+                if (modal == null) return;
+                modal.style.display = 'flex';
+            }
+
+            function closeModal(modal) {
+                if (modal == null) return;
+                modal.style.display = 'none';
+            }
+
+            openButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    const modal = document.querySelector(button.dataset.modalTarget);
+                    openModal(modal);
+                });
+            });
+
+            closeButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    const modal = button.closest('.modal-overlay');
+                    closeModal(modal);
+                });
+            });
+
+            overlays.forEach(overlay => {
+                overlay.addEventListener('click', (event) => {
+                    if (event.target === overlay) {
+                        closeModal(overlay);
+                    }
+                });
+            });
+
+        }); 
+    </script>
 </body>
 </html>
