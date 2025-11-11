@@ -5,15 +5,15 @@
     <title>Cafeneaua Miau - Acasa</title>
     <style>
         body {
-            font-family: Calibri;
-            background-image: url('fundal-cafenea.jpg');
-            background-size: cover;
+            
+            background-image: url("background.jpg");
+            background-size: contain;
             background-position: center;
-            background-attachment: fixed; 
-            margin: 0;
-            padding: 0;
+            background-repeat: no-repeat;
+            position: relative;
+            font-family: Calibri;
+            
         }
-        
         .page-container {
             display: grid;
             min-height: 100vh;
@@ -78,29 +78,31 @@
             background-color: #fff8f8; 
             color: #c71585;
         }
-        
         main {
+            width: auto;
             grid-area: main; 
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
         .welcome-section {
             background-color: rgba(255, 248, 248, 0.92);
-            margin: 50px auto;
+            margin: 0 auto;
             padding: 40px;
-            width: 80%;
-            max-width: 800px;
+            width: auto;
             border-radius: 15px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            box-shadow: 0 4px 15px rgba(206, 201, 201, 0.1);
+            justify-content: center;
             text-align: center;
         }
-
         .welcome-section h2 {
-            text-align: center;
-            font-size: 32px;
+            font-size: 36px;
             color: #c71585; 
         }
         
-        aside {
+       aside {
+        
             grid-area: aside;
             background-color: rgba(255, 248, 248, 0.92);
 
@@ -112,13 +114,13 @@
             border-radius: 15px;
             box-shadow: 0 4px 10px rgba(0,0,0,0.08);
         }
-        
         aside h3 {
             margin-top: 0;
             color: #c71585;
             text-align: center;
         }
 
+        
         footer {
             grid-area: footer;
             background-color: rgba(255, 192, 203, 0.95); 
@@ -143,7 +145,7 @@
                 grid-template-areas:
                     "header header"
                     "nav    nav"
-                    "main   aside"  
+                    "main   main"  
                     "footer footer";
             }
 
@@ -183,9 +185,9 @@
         </nav>
 
         <main>
-            <div class="welcome-section">
+            <center><div class="welcome-section">
                 <h2>Bun venit la cafeneaua mea dulce!</h2>
-            </div>
+            </div></center>
         </main>
 
         <footer>
