@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <title>Lista mea cu treburi</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #eeaacc;
+            padding: 20px;
+        }
+
+        h1 {
+            color: #850d0d;
+            text-align: center;
+        }
+
+        .card-activitati {
+            background-color: #dbb9d3;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            max-width: 500px;
+            margin: 20px auto;
+        }
+
+        #inputActivitate {
+            padding: 10px;
+            margin-right: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            width: 60%;
+            box-sizing: border-box;
+        }
+
+        #btnAdauga {
+            padding: 10px 15px;
+            background-color: #d44551;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            width: 30%;
+        }
+
+        #btnAdauga:hover {
+            background-color: #ae4c95;
+        }
+
+        #listaActivitati {
+            list-style-type: none;
+            padding: 0;
+            margin-top: 20px;
+        }
+
+        #listaActivitati li {
+            padding: 10px;
+            background-color: #e9ecef;
+            border-left: 5px solid #b85c99;
+            margin-bottom: 8px;
+            border-radius: 4px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+            word-wrap: break-word;
+        }
+    </style>
+</head>
+<body>
+    <h1>Lista mea cu treburi</h1>
+
+    <p>Adauga o activitate mai jos apoi apasa "adauga".</p>
+
+    <div class="card-activitati">
+        <input type="text" id="inputActivitate" placeholder="Introdu o activitate">
+        <button id="btnAdauga">Adauga activitate</button>
+        <ul id="listaActivitati"></ul>
+    </div>
+
+    <script>
+        const LUNI_RO = [
+            "Ianuarie", "Februarie", "Martie", "Aprilie", "Mai", "Iunie",
+            "Iulie", "August", "Septembrie", "Octombrie", "Noiembrie", "Decembrie"
+        ];
+
+        const inputActivitate = document.getElementById("inputActivitate");
+        const btnAdauga = document.getElementById("btnAdauga");
+        const listaActivitati = document.getElementById("listaActivitati");
+
+        btnAdauga.addEventListener("click", function () {
+            const textActivitate = inputActivitate.value.trim();
+
+            if (textActivitate !== "") {
+                const elementNou = document.createElement("li");
+
+                const dataCurenta = new Date();
+                const zi = dataCurenta.getDate();
+                const luna = LUNI_RO[dataCurenta.getMonth()];
+                const an = dataCurenta.getFullYear();
+
+                const textData = `${zi} ${luna} ${an}`;
+                elementNou.textContent = `${textActivitate} - adaugata la: ${textData}`;
+
+                listaActivitati.appendChild(elementNou);
+
+                inputActivitate.value = "";
+            } else {
+                alert("Ultima sansa sa adaugi ceva de facut!");
+            }
+        });
+    </script>
+</body>
+</html>

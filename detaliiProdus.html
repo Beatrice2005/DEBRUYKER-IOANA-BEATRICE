@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <title>Detalii produs</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #dfa7c7;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .card-produs {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            max-width: 400px;
+            margin: 30px auto;
+        }
+
+        h2 {
+            color: #030102;
+            margin-top: 0;
+        }
+
+        .imagine-produs {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            margin-bottom: 15px;
+        }
+
+        #btnDetalii {
+            padding: 10px 15px;
+            background-color: #d43643;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+            width: 100%;
+        }
+
+        #btnDetalii:hover {
+            background-color: #f881de;
+        }
+        .ascuns {
+            display: none;
+        }
+
+        #detalii {
+            text-align: left;
+            padding-top: 15px;
+            margin-top: 15px;
+            border-top: 1px solid #eee;
+        }
+
+        #detalii p {
+            line-height: 1.5;
+            color: #000000;
+            font-size: 0.9em;
+        }
+        
+        #dataProdus {
+            font-weight: bold;
+            color: #d41695;
+        }
+    </style>
+</head>
+<body>
+    <h1>Detalii produs</h1>
+
+    <div class="card-produs">
+        <h2>Placa de par dyson airstrait</h2>
+        <img class="imagine-produs" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQKgprMMTkugGbxzwuwCRbzEX4r8jvGasrgdg&s" alt="Imagine Telefon X Pro">
+        
+        <button id="btnDetalii">Afiseaza detalii</button>
+
+        <div id="detalii">
+            <p>Cea mai buna placa de par de pe piata, daca o cumparati o sa aveti cel mai sanatos si stralucitor par!</p>
+            
+            <p>Informatiile sunt valabile la data: <span id="dataProdus"></span>.</p>
+        </div>
+    </div>
+
+    <script>
+        const LUNI_RO = [
+            "Ianuarie", "Februarie", "Martie", "Aprilie", "Mai", "Iunie",
+            "Iulie", "August", "Septembrie", "Octombrie", "Noiembrie", "Decembrie"
+        ];
+        const btnDetalii = document.getElementById("btnDetalii");
+        const detaliiDiv = document.getElementById("detalii"); 
+        const dataProdusSpan = document.getElementById("dataProdus"); 
+        detaliiDiv.classList.add("ascuns");
+        const dataCurenta = new Date();
+        const zi = dataCurenta.getDate();
+        const luna = LUNI_RO[dataCurenta.getMonth()];
+        const an = dataCurenta.getFullYear();
+        const dataFormatata = `${zi} ${luna} ${an}`;
+        dataProdusSpan.textContent = dataFormatata;
+        btnDetalii.addEventListener("click", function () {
+            detaliiDiv.classList.toggle("ascuns");
+            if (detaliiDiv.classList.contains("ascuns")) {
+                btnDetalii.textContent = "Afiseaza detalii"; 
+            } else {
+                btnDetalii.textContent = "Ascunde detalii"; 
+            }
+        });
+    </script>
+</body>
+</html>
