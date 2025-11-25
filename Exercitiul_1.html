@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>ex1</title>
+</head>
+<body>
+    <h1>ex1</h1>
+    <p>Te rog deschide consola (Inspect Element / F12) pentru a vedea rezultatele.</p>
+
+    <script>
+        var myName = "Beatrice"; 
+        var mySurname = "Debruyker"; 
+        var myAge = 20; 
+        var studyYear = 3; 
+        var myHobby = "programarea"; 
+
+        myAge += 5; 
+
+        console.log("--- Varianta cu Concatenare (+) ---");
+        console.log("Buna! \nMa numesc " + mySurname + " " + myName + " si am " + myAge + " ani. " +
+                    "Sunt la Universitatea Politehnica Bucuresti, in anul " + studyYear + ". \n" +
+                    "Unul dintre hobby-urile mele este " + myHobby + ".");
+
+        console.log("--- Varianta cu Placeholders (``) ---");
+        console.log(`Buna! 
+Ma numesc ${mySurname} ${myName} si am ${myAge} ani. Sunt la Universitatea Politehnica Bucuresti, in anul ${studyYear}. 
+Unul dintre hobby-urile mele este ${myHobby}.`);
+
+        console.log("--- Tipuri de Date ---");
+        console.log("Tipul variabilei myName este: " + typeof myName); 
+        console.log("Tipul variabilei myAge este: " + typeof myAge); 
+        console.log("Tipul variabilei myHobby este: " + typeof myHobby); 
+    </script>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>ex44</title>
+</head>
+<body>
+    <h1>ex4</h1>
+    <p>Deschide consola pentru a vedea rez.</p>
+
+    <script>
+        var l1 = 25;
+        var l2 = 4;
+        var l3 = 25;
+        var l4 = 16;
+
+        console.log(`Nr date sunt: ${l1}, ${l2}, ${l3}, ${l4}`);
+        var s1, s2;
+        var isRectangle = false; 
+        if (l1 === l2 && l3 === l4) {
+            isRectangle = true;
+            s1 = l1;
+            s2 = l3;
+        } 
+        else if (l1 === l3 && l2 === l4) {
+            isRectangle = true;
+            s1 = l1;
+            s2 = l2;
+        } 
+        else if (l1 === l4 && l2 === l3) {
+            isRectangle = true;
+            s1 = l1;
+            s2 = l2;
+        }
+        if (isRectangle) {
+            var perimetrul = 2 * (s1 + s2);
+            var aria = s1 * s2;
+
+            console.log("Cele 4 nr pot reprezenta laturi ale unui dreptunghi!");
+            console.log(`Perimetrul este: ${perimetrul}. Aria este: ${aria}.`);
+        } else {
+            console.log("Cele 4 nr nu pot reprezenta laturi ale unui dreptunghi!");
+        }
+    </script>
+</body>
+</html>

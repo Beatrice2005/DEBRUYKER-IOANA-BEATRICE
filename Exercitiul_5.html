@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title> ex5</title>
+</head>
+<body>
+    <h1>ex5</h1>
+    <p>Determinati aria si perimetrul</p>
+</body>
+</html>
+    <script>
+        var a = 10;
+        var b = 10;
+        var c = 12;
+        console.log(`Laturile date sunt: ${a}, ${b}, ${c}`)
+        var isTriangle = (a + b > c) && (a + c > b) && (b + c > a);
+
+        if (isTriangle) {
+            console.log("Cele 3 laturi pot forma un triunghi.");
+            if (a === b && b === c) {
+                console.log("Tipul triunghiului este: Echilateral");
+            } 
+            else if (a === b || a === c || b === c) {
+                console.log("Tipul triunghiului este: Isoscel");
+            } 
+            else {
+                console.log("Tipul triunghiului este: Oarecare");
+            }
+
+        } else {
+            console.log("Cele 3 laturi NU pot forma un triunghi.");
+        }
+    </script>
+</body>
+</html>

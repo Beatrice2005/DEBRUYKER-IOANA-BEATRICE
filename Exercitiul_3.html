@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>ex3</title>
+</head>
+<body>
+    <h1>ex3</h1>
+    <p>Deschide consola sa vezi rez.</p>
+
+    <script>
+        var numarul_1 = 15;
+        var numarul_2 = 4;
+        var numarul_3 = 12;
+        console.log("Numerele date sunt: " + numarul_1 + ", " + numarul_2 + ", " + numarul_3);
+        console.log("Ordinea lor descrescatoare este:");
+
+        //dupa nr1 este cmm
+        if (numarul_1 >= numarul_2 && numarul_1 >= numarul_3) { 
+            if (numarul_2 >= numarul_3) {
+                console.log(numarul_1 + ", " + numarul_2 + ", " + numarul_3);
+            } else {
+                console.log(numarul_1 + ", " + numarul_3+ ", " + numarul_2);
+            }
+        } 
+        //dupa nr2 este cmm
+        else if (numarul_2 >= numarul_1 && numarul_2 >= numarul_3) { 
+            if (numarul_1 >= numarul_3) {
+                console.log(numarul_2 + ", " + numarul_1 + ", " + numarul_3);
+            } else {
+                console.log(numarul_2 + ", " + numarul_3 + ", " + numarul_1);
+            }
+        } 
+        //dupa nr3 este cmm
+        else {
+            if (numarul_1 >=numarul_2 ) {
+                console.log(numarul_3 + ", " + numarul_1 + ", " + numarul_2 );
+            } else {
+                console.log(numarul_3 + ", " + numarul_2 +", " + numarul_1 );
+            }
+        }
+            
+    </script>
+</body>
+</html>
